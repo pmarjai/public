@@ -1,5 +1,5 @@
 function FindProxyForURL(url, host) {
-    var PROXY = "SOCKS5 127.0.0.1:1337; DIRECT";
+    var proxy = "SOCKS5 127.0.0.1:1337; DIRECT";
     var host_ip = dnsResolve(host);
     //if (shExpMatch(host,".peak6.net")) {
     //    return PROXY;
@@ -7,7 +7,7 @@ function FindProxyForURL(url, host) {
     if (
         dnsDomainIs(host,".peak6.net") || isInNet(host_ip, "10.0.0.0", "255.0.0.0")
     ) {
-        return PROXY;
+        return proxy;
     } else {
         return "DIRECT";
     }
